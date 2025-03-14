@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/styles.css", "destination": "/grid/styles.css", "permanent": true }
+  ]
+}
