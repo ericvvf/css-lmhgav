@@ -1,5 +1,6 @@
 {
   "redirects": [
-    { "source": "/styles.css", "destination": "/grid/styles.css", "permanent": true }
+    { "source": "/styles.css", "destination": "/grid/styles.css", "permanent": true },
+    { "source": "/styles-2.css", "destination": "/grid/styles-2.css", "permanent": true }
   ]
 }
