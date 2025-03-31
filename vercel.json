@@ -3,6 +3,6 @@
     { "source": "/styles.css", "destination": "/grid/styles.css", "permanent": true },
     { "source": "/styles-2.css", "destination": "/grid/styles-2.css", "permanent": true },
     { "source": "/styles-3.css", "destination": "/grid/styles-3.css", "permanent": true },
-    { "source": "/news.css", "destination": "/grid/news.css", "permanent": true },
+    { "source": "/news.css", "destination": "/grid/news.css", "permanent": true }
   ]
 }
