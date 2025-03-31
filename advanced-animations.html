@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Scroll Site</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link href="advanced-animations.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Menu Toggle Button -->
+<button class="menu-toggle" id="menuToggle">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</button>
+
+<!-- Fullscreen Menu -->
+<div class="fullscreen-menu" id="fullscreenMenu">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Portfolio</a>
+    <a href="#">Contact</a>
+</div>
+
+<section class="bg-white text-center">
+    <div class="container">
+        <div class="reveal-left">
+            <h2>Welcome to Our Site</h2>
+            <p class="lead">This is a simple section that fades in from the left as you scroll.</p>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light text-center">
+    <div class="container">
+        <div class="reveal-right">
+            <h2>About Us</h2>
+            <p>We provide amazing web experiences using modern design and animation techniques.</p>
+        </div>
+    </div>
+</section>
+
+<section class="bg-white text-center">
+    <div class="container">
+        <div class="reveal-left">
+            <h2>Our Services</h2>
+            <h3>Responsive Design</h3>
+            <p>Everything looks great on all devices and screen sizes.</p>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light text-center">
+    <div class="container">
+        <div class="reveal-right">
+            <h2>Portfolio</h2>
+            <h3>Some of Our Work</h3>
+            <p>We’ve built websites for clients across multiple industries.</p>
+        </div>
+    </div>
+</section>
+
+<section class="bg-white text-center">
+    <div class="container">
+        <div class="reveal-left">
+            <h2>Contact</h2>
+            <p>Let’s create something together. Reach out to us anytime.</p>
+        </div>
+    </div>
+</section>
+
+<section class="bg-dark text-white text-center">
+    <div class="container">
+        <div class="explode">
+            <h2>Special Effects</h2>
+            <p>This section appears with an exploding animation using only CSS.</p>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Scroll reveal logic
+        const reveals = document.querySelectorAll('.reveal-left, .reveal-right, .explode');
+        const revealOnScroll = () => {
+            for (let el of reveals) {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    el.classList.add("reveal-visible");
+                    if (el.classList.contains('explode')) {
+                        el.classList.add('explode-visible');
+                    }
+                }
+            }
+        };
+        window.addEventListener("scroll", revealOnScroll);
+        window.addEventListener("load", revealOnScroll);
+
+        // Menu toggle logic
+        const menuToggle = document.getElementById('menuToggle');
+        const fullscreenMenu = document.getElementById('fullscreenMenu');
+
+        if (menuToggle && fullscreenMenu) {
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('open');
+                fullscreenMenu.classList.toggle('show');
+            });
+        }
+    });
+</script>
+</body>
+</html>
